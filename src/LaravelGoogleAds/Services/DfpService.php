@@ -2,6 +2,8 @@
 
 namespace LaravelGoogleAds\Services;
 
+use Illuminate\Support\Facades\Config;
+
 use Google\AdsApi\Dfp\DfpServices;
 use Google\AdsApi\Common\AdsSoapClient;
 use Google\AdsApi\Common\Configuration;
@@ -59,7 +61,7 @@ class DfpService
      */
     private function configuration()
     {
-        $config = config('google-ads');
+        $config = Config::get('google-ads');
 
         return new Configuration($config);
     }

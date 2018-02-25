@@ -2,6 +2,8 @@
 
 namespace LaravelGoogleAds\Services;
 
+use Illuminate\Support\Facades\Config;
+
 use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
 
@@ -104,7 +106,7 @@ class AuthorizationService
     private function credentials()
     {
         /** @var null|array $config */
-        $config = config('google-ads');
+        $config = Config::get('google-ads');
 
         if (is_null($config) || !count($config)) {
             return false;

@@ -2,6 +2,8 @@
 
 namespace LaravelGoogleAds\Services;
 
+use Illuminate\Support\Facades\Config;
+
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\Common\AdsSoapClient;
@@ -69,7 +71,7 @@ class AdWordsService
      */
     private function configuration($clientCustomerId = null)
     {
-        $config = config('google-ads');
+        $config = Config::get('google-ads');
 
         if (!is_null($clientCustomerId)) {
             $config['ADWORDS']['clientCustomerId'] = $clientCustomerId;

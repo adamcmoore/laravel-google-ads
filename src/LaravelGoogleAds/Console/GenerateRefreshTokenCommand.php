@@ -4,12 +4,13 @@ namespace LaravelGoogleAds\Console;
 
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Config;
 use LaravelGoogleAds\Services\AuthorizationService;
 
 class GenerateRefreshTokenCommand extends Command
 {
     /** @var string */
-    protected $signature = 'googleads:token:generate';
+    protected $name = 'googleads:token:generate';
 
     /** @var string */
     protected $description = 'Generate a new refresh token for Google Ads API';
@@ -131,7 +132,7 @@ class GenerateRefreshTokenCommand extends Command
     private function config()
     {
         /** @var null|array $config */
-        $config = config('google-ads');
+        $config = Config::get('google-ads');
 
         if (is_null($config) || !count($config)) {
             return false;

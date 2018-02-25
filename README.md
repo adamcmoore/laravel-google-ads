@@ -2,18 +2,16 @@
 <img src="https://cloud.githubusercontent.com/assets/3541622/17292148/47c841ea-57e8-11e6-80c3-773dfd28a1f4.png" alt="">
 </p>
 
-[![Laravel 5.1+](https://img.shields.io/badge/Laravel-5.3+-orange.svg?style=flat-square)](http://laravel.com) [![Lumen 5.1+](https://img.shields.io/badge/Lumen-5.3+-orange.svg?style=flat-square)](http://lumen.laravel.com)  [![Total Downloads](https://poser.pugx.org/nikolajlovenhardt/laravel-google-ads/downloads)](https://packagist.org/packages/nikolajlovenhardt/laravel-google-ads) [![License](https://poser.pugx.org/nikolajlovenhardt/laravel-google-ads/license)](https://packagist.org/packages/nikolajlovenhardt/laravel-google-ads) [![Build Status](https://travis-ci.org/nikolajlovenhardt/laravel-google-ads.svg?branch=master)](https://travis-ci.org/nikolajlovenhardt/laravel-google-ads) [![Code Climate](https://codeclimate.com/github/nikolajlovenhardt/laravel-google-ads/badges/gpa.svg)](https://codeclimate.com/github/nikolajlovenhardt/laravel-google-ads) [![Test Coverage](https://codeclimate.com/github/nikolajlovenhardt/laravel-google-ads/badges/coverage.svg)](https://codeclimate.com/github/nikolajlovenhardt/laravel-google-ads/coverage)
+## Google Ads API for Laravel 4.2
 
-## Google Ads API for Laravel
-
-Integration of [`googleads/googleads-php-lib`](https://github.com/googleads/googleads-php-lib) in Laravel and Lumen (version >5).
+A quick fork of [`nikolajlovenhardt/laravel-google-ads`](https://github.com/nikolajlovenhardt/laravel-google-ads) with minor changes to support the aged.
 
 ### Setup
-- Run `$ composer require nikolajlovenhardt/laravel-google-ads`
+- Run `$ composer require adamcmoore/laravel-google-ads`
 
 #### Laravel
 
-- **(Only for Laravel 5.4 or minor)** Add provider to config/app.php
+- Add provider to config/app.php
 
 ```php
 'providers' => [
@@ -21,29 +19,11 @@ Integration of [`googleads/googleads-php-lib`](https://github.com/googleads/goog
 ],
 ```
 
-- Run `$ php artisan vendor:publish` to publish the configuration file `config/google-ads.php` and insert:
+- Copy the configuration file `config/google-ads.php` and insert:
     - developerToken
     - clientId & clientSecret
     - refreshToken
 
-#### Lumen
-
-- Add provider to `bootstrap/app.php`
-
-```php
-$app->register(LaravelGoogleAds\LaravelGoogleAdsProvider::class);
-```
-
-- Copy `vendor/nikolajlovenhardt/laravel-google-ads/config/config.php` to `config/google-ads.php` and insert:
-    - developerToken
-    - clientId & clientSecret
-    - refreshToken
-
-- Add config to `bootstrap/app.php`
-
-```php
-$app->configure('google-ads');
-```
 
 ### Generate refresh token
 *This requires that the `clientId` and `clientSecret` is from a native application.*

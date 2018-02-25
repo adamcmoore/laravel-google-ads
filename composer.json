@@ -1,7 +1,7 @@
 {
-  "name": "nikolajlovenhardt/laravel-google-ads",
+  "name": "adamcmoore/laravel-google-ads",
   "type": "library",
-  "description": "Google Ads API for Laravel",
+  "description": "Google Ads API for Laravel 4.2",
   "minimum-stability": "dev",
   "keywords": [
     "laravel",
@@ -9,20 +9,24 @@
     "adwords",
     "google"
   ],
-  "homepage": "https://github.com/nikolajlovenhardt/laravel-google-ads",
+  "homepage": "https://github.com/adamcmoore/laravel-google-ads",
   "license": "MIT",
   "authors": [
     {
       "name": "Nikolaj Petersen",
       "email": "nikolaj.lovenhardt@gmail.com",
       "homepage": "http://github.com/nikolajlovenhardt"
+    },
+    {
+      "name": "Adam Moore",
+      "email": "adam@acmoore.co.uk",
+      "homepage": "http://github.com/adamcmoore"
     }
   ],
   "require": {
     "php": ">=5.5.9",
     "ext-soap": "*",
-    "illuminate/console": ">=5.1",
-    "illuminate/support": "~5.1",
+    "laravel/framework": "4.2.*",
     "googleads/googleads-php-lib": "~32.0.0"
   },
   "require-dev": {
@@ -42,13 +46,6 @@
   "autoload-dev": {
     "psr-4": {
       "LaravelGoogleAdsTests\\": "tests/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "LaravelGoogleAds\\LaravelGoogleAdsProvider"
-      ]
     }
   }
 }
